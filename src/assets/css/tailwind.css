@@ -1,0 +1,56 @@
+@tailwind base;
+
+html {
+    @apply overflow-hidden
+}
+
+*:not(.bebas){
+    font-family: 'Roboto', sans-serif;
+}
+
+
+@tailwind components;
+@tailwind utilities;
+
+
+.fullpage {
+    @apply w-screen h-screen max-h-screen min-w-full min-h-screen overflow-hidden
+}
+
+.page {
+    @apply w-full min-w-full h-full min-h-full overflow-hidden
+}
+
+/* .fullpage * {
+    border: magenta 1px solid;
+} */
+
+.w-bar {
+    width: 7.5vw;
+}
+
+.w-nobar {
+    width: 92.5vw;
+}
+
+.text-vertical {
+    writing-mode: vertical-rl;
+}
+
+.spacing-vertical {
+    letter-spacing: .3rem;
+}
+
+.bebas {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.text-5-5rem{
+    font-size: 3.25rem;
+}
+
+.start {
+    background-image: url('../img/text_bg.png');
+    background-size: cover;
+    transition: all ease 1s;
+}

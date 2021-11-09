@@ -4,6 +4,7 @@
       <span
         class="
           text-white text-5-5rem text-center text-vertical
+          select-none
           transform
           rotate-180
           leading-none
@@ -18,15 +19,15 @@
 </template>
 
 <script>
-import useText from "@/composables/useText"
+import useText from "@/composables/useText";
 
 export default {
   name: "ServiceBar",
   setup() {
-    const { messages } = useText()
+    const { messages } = useText();
     return {
-      messages
-    }
+      messages,
+    };
   },
 };
 </script>

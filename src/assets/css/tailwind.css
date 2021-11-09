@@ -1,24 +1,23 @@
 @tailwind base;
 
 html {
-    @apply overflow-hidden
+  @apply overflow-hidden;
 }
 
-*:not(.bebas){
-    font-family: 'Roboto', sans-serif;
+*:not(.bebas) {
+  font-family: "Roboto", sans-serif;
 }
-
 
 @tailwind components;
 @tailwind utilities;
 
-
 .fullpage {
-    @apply w-screen h-screen max-h-screen min-w-full min-h-screen overflow-hidden
+  @apply h-screen max-h-screen min-h-screen overflow-hidden flex;
+  width: 200vw;
 }
 
 .page {
-    @apply w-full min-w-full h-full min-h-full overflow-hidden
+  @apply w-screen h-screen overflow-hidden;
 }
 
 /* .fullpage * {
@@ -26,31 +25,36 @@ html {
 } */
 
 .w-bar {
-    width: 7.5vw;
+  width: 7.5vw;
 }
 
 .w-nobar {
-    width: 92.5vw;
+  width: 92.5vw;
 }
 
 .text-vertical {
-    writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
 }
 
 .spacing-vertical {
-    letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
 }
 
 .bebas {
-    font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 }
 
-.text-5-5rem{
-    font-size: 3.25rem;
+.text-5-5rem {
+  font-size: 3.25rem;
 }
 
 .start {
-    background-image: url('../img/text_bg.png');
-    background-size: cover;
-    transition: all ease 1s;
+  background-image: url("../img/text_bg.png");
+  background-size: cover;
+  transition: all ease 1s;
+}
+
+.swiper {
+  width: 100vw;
+  height: 100vh;
 }

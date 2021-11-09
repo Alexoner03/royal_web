@@ -35,7 +35,6 @@ export default () => {
             console.warn("ERR: LAST PAGE")
             return
         }
-
         page.value = pages.value[nextPageIndex]
         
     }

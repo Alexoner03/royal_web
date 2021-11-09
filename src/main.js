@@ -6,6 +6,7 @@ import DragScroll from "./directives/DragScroll";
 
 import "./assets/css/tailwind.css";
 import "aos/dist/aos.css";
+import 'swiper/swiper.scss';
 
 AOS.init({
     duration: 700, // values from 0 to 3000, with step 50ms

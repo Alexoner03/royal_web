@@ -5,7 +5,7 @@
       <div class="w-1/2 h-full flex flex-col">
         <div class="w-full h-1/2 p-8">
           <h1
-            class="text-4xl font-medium text-royalblue mb-8"
+            class="text-4xl font-medium text-royalblue mb-8 select-none"
             data-aos="fade-in"
           >
             {{ messages.start.title }}
@@ -18,7 +18,7 @@
             class="mb-8 w-11/12"
           />
           <h2
-            class="text-3xl font-medium text-royalorange text-right w-11/12"
+            class="text-3xl font-medium text-royalorange text-right w-11/12 select-none"
             data-aos="fade-up"
             data-aos-duration="3000"
           >
@@ -31,7 +31,7 @@
       </div>
       <div class="w-1/2 h-full flex flex-col justify-end">
         <div
-          class="h-1/2 pt-8 pl-0 pr-24 text-royalblue text-2xl text-justify"
+          class="h-1/2 pt-8 pl-0 pr-24 text-royalblue text-2xl text-justify select-none"
           data-aos="fade-up"
           data-aos-duration="3000"
         >
@@ -46,8 +46,9 @@
 <script>
 import ServiceBar from "../Common/ServiceBar.vue";
 import NavMenu from "../Common/NavMenu.vue";
-import useText from "@/composables/useText";
 import NextButton from "../Common/NextButton.vue";
+
+import useText from "@/composables/useText";
 
 export default {
   components: { ServiceBar, NavMenu, NextButton },
@@ -55,9 +56,7 @@ export default {
   setup() {
     const { messages } = useText();
 
-    const setScroll = (event) => {
-      console.log(event.detail.distance);
-    };
+    const setScroll = (event) => {}
 
     return {
       setScroll,

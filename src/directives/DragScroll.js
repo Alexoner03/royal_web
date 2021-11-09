@@ -9,7 +9,7 @@ export default {
     element.addEventListener("mouseup", (e) => {
       const distance = init - e.offsetX
 
-      if (Math.abs(distance) > 100) {
+      if (Math.abs(distance) > 50) {
         const event = new CustomEvent("dragfinish", {
           detail: {
             distance,

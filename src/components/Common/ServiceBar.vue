@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-bar bg-royalblue">
+  <div class="h-full w-bar bg-royalblue absolute right-0 top-0 z-50">
     <div class="flex justify-center h-full w-full" data-aos="fade-up">
       <span
         class="

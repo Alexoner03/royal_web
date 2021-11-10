@@ -1,7 +1,6 @@
 <template>
-  <div class="page flex start" v-dragscroll @dragfinish="setScroll">
+  <div class="page flex start">
     <div class="h-full w-nobar flex relative">
-      <next-button />
       <div class="w-1/2 h-full flex flex-col">
         <div class="w-full h-1/2 p-8">
           <h1
@@ -26,7 +25,6 @@
           </h2>
         </div>
         <div class="w-full h-1/2 p-8 flex">
-          <nav-menu />
         </div>
       </div>
       <div class="w-1/2 h-full flex flex-col justify-end">
@@ -39,28 +37,22 @@
         </div>
       </div>
     </div>
-    <service-bar />
   </div>
 </template>
 
 <script>
-import ServiceBar from "../Common/ServiceBar.vue";
-import NavMenu from "../Common/NavMenu.vue";
-import NextButton from "../Common/NextButton.vue";
-
 import useText from "@/composables/useText";
+import useSwiper from "@/composables/useSwiper";
 
 export default {
-  components: { ServiceBar, NavMenu, NextButton },
   name: "StartPage",
   setup() {
     const { messages } = useText();
-
-    const setScroll = (event) => {}
-
+    const { activeIndex } = useSwiper();
+      
     return {
-      setScroll,
       messages,
+      activeIndex
     };
   },
 };

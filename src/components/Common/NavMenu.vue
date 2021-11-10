@@ -1,9 +1,9 @@
 <template>
-  <ul class="flex flex-col justify-end" data-aos="fade-in">
+  <ul class="absolute bottom-0 left-0 z-50 flex flex-col justify-end ml-8 mb-8" data-aos="fade-in">
     <li
       :class="[
-        'text-2xl font-medium cursor-pointer hover:text-royalblue hover:opacity-80 transition-all ease-in select-none',
-        checkIfbeInPage(item.name) ? 'text-royalblue' : 'text-gray-500 opacity-40',
+        'text-2xl font-medium cursor-pointer hover:text-royalblue hover:opacity-80 transition-all ease-in select-none duration-1000',
+        active === index ? 'text-royalblue' : 'text-gray-500 opacity-40',
       ]"
       v-for="(item, index) in messages.nav"
       :key="index"
@@ -15,16 +15,16 @@
 
 <script>
 import useText from "@/composables/useText";
-import usePage from "@/composables/usePage";
 
 export default {
   name: "NavMenu",
+  props: {
+    active: Number,
+  },
   setup() {
     const { messages } = useText();
-    const { checkIfbeInPage } = usePage()
     return {
       messages,
-      checkIfbeInPage
     };
   },
 };

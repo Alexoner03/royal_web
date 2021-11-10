@@ -4,9 +4,10 @@ import router from "./router";
 import AOS from "aos";
 import DragScroll from "./directives/DragScroll";
 
-import "./assets/css/tailwind.css";
 import "aos/dist/aos.css";
 import 'swiper/swiper.scss';
+import 'swiper/modules/effect-fade/effect-fade.scss'
+import "./assets/css/tailwind.css";
 
 AOS.init({
     duration: 700, // values from 0 to 3000, with step 50ms

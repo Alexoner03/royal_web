@@ -1,11 +1,12 @@
 <template>
   <div class="w-full h-full relative">
     <swiper
-      class="mySwiper swiper-h"
+      class="mySwiper swiper-h z-20"
       @swiper="onSwiper"
-      :speed="1000"
+      :speed="1500"
       :mousewheel="true"
-      :modules="[Mousewheel]"
+      :effect="'fade'"      
+      :modules="[Mousewheel,EffectFade]"
     >
       <swiper-slide>
         <start />
@@ -27,11 +28,11 @@ import Service from "../components/Home/Service.vue";
 import Start from "../components/Home/Start.vue";
 import useSwiper from "../composables/useSwiper";
 import { Swiper, SwiperSlide } from "swiper/vue/swiper-vue";
-import SwiperCore, { Mousewheel } from "swiper";
+import SwiperCore, { Mousewheel,EffectFade } from "swiper";
 import ServiceBar from "../components/Common/ServiceBar.vue";
 import NextButton from '../components/Common/NextButton.vue';
 import NavMenu from '../components/Common/NavMenu.vue';
-SwiperCore.use([Mousewheel]);
+SwiperCore.use([Mousewheel,EffectFade]);
 export default {
   components: { Start, Service, Swiper, SwiperSlide, ServiceBar, NextButton, NavMenu },
   name: "Home",
@@ -46,7 +47,8 @@ export default {
       // EffectFade,
       onSwiper,
       activeIndex,
-      Mousewheel
+      Mousewheel,
+      EffectFade
     };
   },
 };

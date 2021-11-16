@@ -5,8 +5,8 @@
       @swiper="onSwiper"
       :speed="1500"
       :mousewheel="true"
-      :effect="'fade'"      
-      :modules="[Mousewheel,EffectFade]"
+      :modules="[Mousewheel, EffectFade]"
+      :edge-swipe-threshold="50"
     >
       <swiper-slide>
         <start />
@@ -14,27 +14,44 @@
       <swiper-slide>
         <service />
       </swiper-slide>
-      <swiper-slide>Horizontal Slide 3</swiper-slide>
-      <swiper-slide>Horizontal Slide 4</swiper-slide>
+      <swiper-slide>
+        <team />
+      </swiper-slide>
+      <swiper-slide>PORTFOLIO PAGE</swiper-slide>
+      <swiper-slide>CONTACT PAGE</swiper-slide>
     </swiper>
-    <service-bar />
+    <XyzTransition xyz="fade right duration-10">
+      <service-bar v-if="![2, 3,4].includes(activeIndex)" />
+    </XyzTransition>
     <next-button />
-    <nav-menu :active="activeIndex"/>
+    <nav-menu :active="activeIndex" />
   </div>
 </template>
 
 <script>
 import Service from "../components/Home/Service.vue";
 import Start from "../components/Home/Start.vue";
+import ServiceBar from "../components/Common/ServiceBar.vue";
+import NextButton from "../components/Common/NextButton.vue";
+import NavMenu from "../components/Common/NavMenu.vue";
+import Team from "../components/Home/Team.vue";
+
 import useSwiper from "../composables/useSwiper";
 import { Swiper, SwiperSlide } from "swiper/vue/swiper-vue";
-import SwiperCore, { Mousewheel,EffectFade } from "swiper";
-import ServiceBar from "../components/Common/ServiceBar.vue";
-import NextButton from '../components/Common/NextButton.vue';
-import NavMenu from '../components/Common/NavMenu.vue';
-SwiperCore.use([Mousewheel,EffectFade]);
+import SwiperCore, { Mousewheel, EffectFade } from "swiper";
+SwiperCore.use([Mousewheel, EffectFade]);
+
 export default {
-  components: { Start, Service, Swiper, SwiperSlide, ServiceBar, NextButton, NavMenu },
+  components: {
+    Start,
+    Service,
+    Swiper,
+    SwiperSlide,
+    ServiceBar,
+    NextButton,
+    NavMenu,
+    Team,
+  },
   name: "Home",
   setup() {
     const { setSwiper, activeIndex } = useSwiper();
@@ -48,7 +65,7 @@ export default {
       onSwiper,
       activeIndex,
       Mousewheel,
-      EffectFade
+      EffectFade,
     };
   },
 };

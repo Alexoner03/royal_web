@@ -45,7 +45,7 @@ html {
 }
 
 .start {
-  background-image: url("../img/text_bg.png");
+  background:rgba(255, 255, 255, 0.295) url("../img/text_bg.png");
   background-size: cover;
   transition: all ease 1s;
 }
@@ -56,10 +56,16 @@ html {
 }
 
 .swiper-pagination-bullet {
-  @apply bg-royalorange
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 15px;
+  color: white;
+  @apply bg-royalblue;
+  opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  @apply bg-royalblue
+  @apply bg-royalorange;
 }
-

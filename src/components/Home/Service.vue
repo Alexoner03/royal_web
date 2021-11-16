@@ -7,6 +7,7 @@
             v-if="activeIndex === 1"
             class="
               text-2xl
+              ease-in
               font-semibold
               text-royalblue
               mb-8
@@ -25,22 +26,33 @@
           alt="logo de Royal businness"
         />
         <div class="position relative">
-<XyzTransitionGroup appear xyz="fade ease-in">
-          <p v-if="textIndex === 0" class="text-justify text-royalblue font-semibold text-sm absolute">
-            {{ messages.service.text[textIndex] }}
-          </p>
-          <p v-if="textIndex === 1" class="text-justify text-royalblue font-semibold text-sm absolute">
-            {{ messages.service.text[textIndex] }}
-          </p>
-          <p v-if="textIndex === 2" class="text-justify text-royalblue font-semibold text-sm absolute">
-            {{ messages.service.text[textIndex] }}
-          </p>
-          <p v-if="textIndex === 3" class="text-justify text-royalblue font-semibold text-sm absolute">
-            {{ messages.service.text[textIndex] }}
-          </p>
-        </XyzTransitionGroup>
+          <XyzTransitionGroup appear xyz="fade ease-in">
+            <p
+              v-if="textIndex === 0"
+              class="text-justify text-royalblue font-semibold text-sm absolute"
+            >
+              {{ messages.service.text[textIndex] }}
+            </p>
+            <p
+              v-if="textIndex === 1"
+              class="text-justify text-royalblue font-semibold text-sm absolute"
+            >
+              {{ messages.service.text[textIndex] }}
+            </p>
+            <p
+              v-if="textIndex === 2"
+              class="text-justify text-royalblue font-semibold text-sm absolute"
+            >
+              {{ messages.service.text[textIndex] }}
+            </p>
+            <p
+              v-if="textIndex === 3"
+              class="text-justify text-royalblue font-semibold text-sm absolute"
+            >
+              {{ messages.service.text[textIndex] }}
+            </p>
+          </XyzTransitionGroup>
         </div>
-        
       </div>
       <div class="w-9/12 h-full">
         <swiper
@@ -49,19 +61,20 @@
           :direction="'vertical'"
           :pagination="{
             clickable: true,
+            renderBullet
           }"
         >
           <swiper-slide v-slot="{ isActive }">
             {{ isActive ? setValue(0) : "" }}
             <div class="w-full h-full relative">
-              <div class="absolute z-20 bottom-1/4 ml-16">
+              <div class="absolute z-20 bottom-1/4 ml-8">
                 <XyzTransition
                   appear
                   xyz="small-25% iterate-1 duration-30 ease-out"
                 >
                   <p
                     v-if="activeIndex === 1 && isActive"
-                    class="opacity-80 bebas text-8xl text-royalblue"
+                    class="bebas text-8xl text-royalblue"
                   >
                     CREACIÓN DE MARCA
                   </p>
@@ -72,7 +85,7 @@
                 >
                   <p
                     v-if="activeIndex === 1 && isActive"
-                    class="opacity-80 bebas text-9xl text-royalorange pl-40"
+                    class="bebas text-9xl text-royalorange pl-20"
                   >
                     BRANDING
                   </p>
@@ -181,7 +194,7 @@
                 >
                   <p
                     v-if="isActive"
-                    class="bebas text-royalblue leading-none opacity-80 z-0"
+                    class="bebas text-royalblue leading-none z-0"
                     style="font-size: 12rem"
                   >
                     SOCIAL
@@ -197,7 +210,6 @@
                       bebas
                       text-royalorange
                       pl-40
-                      opacity-80
                       leading-none
                       z-10
                       -mt-12
@@ -225,7 +237,7 @@
                 >
                   <p
                     v-if="isActive"
-                    class="bebas text-royalblue leading-none opacity-80 z-0"
+                    class="bebas text-royalblue leading-none z-0"
                     style="font-size: 12rem"
                   >
                     DISEÑO
@@ -241,7 +253,6 @@
                       bebas
                       text-royalorange
                       pl-72
-                      opacity-80
                       leading-none
                       z-10
                       -mt-12
@@ -289,11 +300,16 @@ export default {
       return "";
     };
 
+    const renderBullet = (index, className) => {
+        return '<span class=\"' + className + '\">' + (index + 1) + '</span>';
+    }
+
     return {
       messages,
       activeIndex,
       setValue,
       textIndex,
+      renderBullet
     };
   },
 };

@@ -8,6 +8,7 @@ import "please-wait/build/please-wait.css";
 export default {
   name: "Loader",
   props: ["isLoading"],
+  emits: ['onFinish'],
   watch: {
     isLoading: {
       handler(isLoading) {
@@ -34,6 +35,9 @@ export default {
       if (this.pleaseWaitInstance) {
         this.pleaseWaitInstance.finish();
         this.pleaseWaitInstance = null;
+        setTimeout(() => {
+          this.$emit('onFinish')
+        }, 3000);
       }
     },
   },
@@ -71,9 +75,11 @@ export default {
   0% {
     opacity: 0;
 
+background-color: white;
     transform: scale(1.3);
   }
   100% {
+    background-color: transparent;
     opacity: 1;
     transform: scale(0.8);
   }

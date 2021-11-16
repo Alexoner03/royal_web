@@ -1,6 +1,5 @@
 <template>
-  <div class="h-full w-bar bg-royalblue absolute right-0 top-0 z-50">
-    <XyzTransition xyz="down duration-30">
+    <div class="h-full w-bar bg-royalblue absolute right-0 top-0 z-50">
       <div class="flex justify-center h-full w-full" v-if="mounted">
         <span
           class="
@@ -16,8 +15,7 @@
           {{ messages.serviceMessage }}
         </span>
       </div>
-    </XyzTransition>
-  </div>
+    </div>
 </template>
 
 <script>

@@ -4,8 +4,9 @@
     data-aos="fade-in"
   >
     <li
+      @click="go(index)"
       :class="[
-        'text-2xl font-medium cursor-pointer hover:text-royalblue hover:opacity-80 transition-all ease-in  duration-300',
+        'text-2xl font-medium cursor-pointer hover:text-royalorange hover:opacity-80 transform hover:scale-105 transition-all ease-in  duration-300',
         active === index ? 'text-royalblue' : 'text-gray-500 opacity-40',
       ]"
       v-for="(item, index) in messages.nav"
@@ -18,6 +19,7 @@
 
 <script>
 import useText from "@/composables/useText";
+import useSwiper from "../../composables/useSwiper";
 
 export default {
   name: "NavMenu",
@@ -26,8 +28,16 @@ export default {
   },
   setup() {
     const { messages } = useText();
+    const { getSwiper } = useSwiper();
+
+    const go = (index) => {
+      const swiper = getSwiper();
+      swiper.slideTo(index);
+    };
+
     return {
       messages,
+      go,
     };
   },
 };

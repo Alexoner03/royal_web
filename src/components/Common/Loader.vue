@@ -1,5 +1,5 @@
 <template>
-  <audio id="musicplayer" autoplay>
+  <audio id="musicplayer">
   <source :src="require('@/assets/sounds/intro.mp3')">
 </audio>
 </template>
@@ -24,6 +24,9 @@ export default {
     },
   },
   methods: {
+    mounted() {
+      document.querySelector('#musicplayer').play()
+    },
     open() {
       // Attaching a `pleaseWaitInstance` property (no need to declare)...
       if (!this.pleaseWaitInstance) {

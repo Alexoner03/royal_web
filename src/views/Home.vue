@@ -6,7 +6,6 @@
       :speed="1500"
       :mousewheel="true"
       :modules="[Mousewheel, EffectFade]"
-      :edge-swipe-threshold="50"
     >
       <swiper-slide>
         <start />
@@ -17,11 +16,11 @@
       <swiper-slide>
         <team />
       </swiper-slide>
-      <swiper-slide>PORTFOLIO PAGE</swiper-slide>
-      <swiper-slide>CONTACT PAGE</swiper-slide>
+      <!-- <swiper-slide>PORTFOLIO PAGE</swiper-slide> -->
+      <swiper-slide><contact/></swiper-slide>
     </swiper>
     <XyzTransition xyz="fade right duration-10">
-      <service-bar v-if="![2, 3,4].includes(activeIndex)" />
+      <service-bar v-if="![2,3,4].includes(activeIndex)" />
     </XyzTransition>
     <next-button />
     <nav-menu :active="activeIndex" />
@@ -35,6 +34,7 @@ import ServiceBar from "../components/Common/ServiceBar.vue";
 import NextButton from "../components/Common/NextButton.vue";
 import NavMenu from "../components/Common/NavMenu.vue";
 import Team from "../components/Home/Team.vue";
+import Contact from '../components/Home/Contact.vue';
 
 import useSwiper from "../composables/useSwiper";
 import { Swiper, SwiperSlide } from "swiper/vue/swiper-vue";
@@ -51,6 +51,7 @@ export default {
     NextButton,
     NavMenu,
     Team,
+    Contact,
   },
   name: "Home",
   setup() {

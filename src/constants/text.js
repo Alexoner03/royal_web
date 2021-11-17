@@ -15,10 +15,6 @@ export default {
         title: "EQUIPO",
       },
       {
-        name: "portfolio",
-        title: "PORTAFOLIO",
-      },
-      {
         name: "contact",
         title: "CONTACTO",
       },

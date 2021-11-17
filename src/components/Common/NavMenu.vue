@@ -7,7 +7,9 @@
       @click="go(index)"
       :class="[
         'text-2xl font-medium cursor-pointer hover:text-royalorange hover:opacity-80 transform hover:scale-105 transition-all ease-in  duration-300',
-        active === index ? 'text-royalblue' : 'text-gray-500 opacity-40',
+        active === index ? 
+         [3].includes(index) ? 'text-royalorange' : 'text-royalblue' 
+         : 'text-gray-500 opacity-40',
       ]"
       v-for="(item, index) in messages.nav"
       :key="index"

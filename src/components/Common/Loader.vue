@@ -23,10 +23,10 @@ export default {
       immediate: true,
     },
   },
-  methods: {
-    mounted() {
+      mounted() {
       document.querySelector('#musicplayer').play()
     },
+  methods: {
     open() {
       // Attaching a `pleaseWaitInstance` property (no need to declare)...
       if (!this.pleaseWaitInstance) {

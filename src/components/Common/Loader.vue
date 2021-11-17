@@ -1,5 +1,7 @@
 <template>
-  <div v-once></div>
+  <audio id="musicplayer" autoplay>
+  <source :src="require('@/assets/sounds/intro.mp3')">
+</audio>
 </template>
 
 <script>

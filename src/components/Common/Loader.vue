@@ -37,7 +37,7 @@ export default {
         this.pleaseWaitInstance = null;
         setTimeout(() => {
           this.$emit('onFinish')
-        }, 2000);
+        }, 1000);
       }
     },
   },
